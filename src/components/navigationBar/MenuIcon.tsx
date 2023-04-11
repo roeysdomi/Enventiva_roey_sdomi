@@ -12,12 +12,12 @@ const MenuIconLine = ({ isOpen, extraClasses }: MenuIconLineProps) => {
 
 const MenuIcon = ({ isOpen, handleClick }: { isOpen: boolean; handleClick: () => void }) => {
   return (
-    <div className="con-MenoIcon  h-full flex justify-end ">
+    <div className="con-MenoIcon   flex justify-end w-full  items-center" style={isOpen?{height:'10%'}:{height:'100%'}}>
       <div
         onClick={() => {
           handleClick();
         }}
-        className="bg-red-600  cursor-pointer flex  flex-col h-full mr-2  justify-center "
+        className="scale-150  cursor-pointer flex  flex-col h-full mr-2  justify-center "
         style={isOpen ? { gap: "0px", height: "10%" } : { gap: "2px" }}
       >
         <MenuIconLine isOpen={isOpen} extraClasses=" rotate-45 " />
