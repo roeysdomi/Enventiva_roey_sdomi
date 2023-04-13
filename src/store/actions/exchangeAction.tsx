@@ -7,11 +7,10 @@ interface CurrencyExchange {
   toCurrency: string;
   amount: number;
 }
-console.log(exchangeRateApi)
 const options = {
     method: 'GET',
     url: exchangeRateApi.url,
-    params: {have: 'USD', want: 'EUR', amount: '5000'},
+    params: {have: '', want: '', amount: ''},
     headers: {
       'X-RapidAPI-Key': exchangeRateApi["X-RapidAPI-Key"]
       ,
@@ -22,8 +21,7 @@ const options = {
 export const convertCurrency = createAsyncThunk(
   "currencyExchange/convertCurrency",
   async ({ fromCurrency, toCurrency, amount }: CurrencyExchange) => {
-    const response = await axios.request(options)
-    console.log(response.data)
+    const response = await axios.request({ ...options,params: {have: fromCurrency, want: toCurrency, amount: amount} })
     return response.data;
   }
 );
