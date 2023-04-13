@@ -1,4 +1,7 @@
-export const currencyList = {
+interface Options {
+    [key: string]: string;
+  }
+export const currencyList: Options = {
     "AED": "United Arab Emirates Dirham",
     "AFN": "Afghan Afghani",
     "ALL": "Albanian Lek",

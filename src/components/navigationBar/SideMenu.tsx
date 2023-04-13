@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { menuExample } from "../../constants/menuExamples";
 import MenuIcon from "./MenuIcon";
 import gsap from "gsap";
 

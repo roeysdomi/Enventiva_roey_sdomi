@@ -4,9 +4,15 @@ import { convertCurrency } from "../actions/exchangeAction";
 interface CurrencyExchangeState {
   loading: boolean;
   error: string | null;
-  result: number | null;
+  result: ServerResult | null;
 }
 
+interface ServerResult {
+  new_amount: number;
+  new_currency: string;
+  old_amount: number | null;
+  old_currency: string;
+}
 const initialState: CurrencyExchangeState = {
   loading: false,
   error: null,

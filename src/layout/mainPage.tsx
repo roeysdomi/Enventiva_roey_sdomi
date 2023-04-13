@@ -6,20 +6,22 @@ import { Title } from "../components/shared/Title";
 import { ConvertorForm } from "../components/general/convertorForm";
 import { useDispatch } from "react-redux";
 import { convertCurrency } from "../store/actions/exchangeAction";
-import { AppDispatch } from "../store";
+import { AppDispatch,RootState } from "../store";
+import { useSelector } from "react-redux";
+
 export const MainPage = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const fromCurrency = "USD";
-  const toCurrency = "USD";
-  const amount = 50;
-  
-  useEffect(() => {
-    dispatch(convertCurrency({ fromCurrency, toCurrency, amount }));
-  }, []);
+  const apiState = useSelector((state: RootState) => state.convertCurrency);
+  const formState = useSelector((state: RootState) => state.converterForm);
+  console.log(formState)
+  console.log(apiState)
+
+
+ 
+
   return (
     <div className="con-mainPage flex flex-row w-h-full ">
       <SideHero />
-      <CurrencyFormSection />
+      <CurrencyFormSection isLoading={ apiState.loading} />
     </div>
   );
 };
@@ -36,12 +38,14 @@ export const SideHero = () => {
   );
 };
 
-export const CurrencyFormSection = () => {
+export const CurrencyFormSection = ({ isLoading }: {isLoading: boolean }) => {
   return (
-    <div className="con-currencyFormSection flex flex-center-center w-[100%] md:w-[40%] h-full relative ">
-      <div className="sideHero-bg w-h-full  absolute z-[-2] bg-cover flex justify-center  pointer-events-none opacity-[0.98]" style={{ backgroundImage: `url(${sunBg})` }}></div>
-      <div className="con-currencyFormSection-title"></div>
-      <ConvertorForm />
+    <div className="con-currencyFormSection flex-col flex-center-center w-[100%] md:w-[40%] h-full relative overflow-hidden ">
+      <div className="sideHero-bg w-h-full  absolute z-[-2] bg-cover  flex   pointer-events-none opacity-[0.98] overflow-auto" style={{ backgroundImage: `url(${sunBg})` }}></div>
+      <div className="scroll-section w-full h-[100%] flex-col gap-4 flex-center-center   overflow-scroll overflow-x-hidden md:overflow-y-hidden">
+        <Title visibility=" z-[4] text-3xl text-white  md:hidden m-4 mt-[30%] h-[60%] w-[100%] " text="Make currency conversions simple." color="" />
+        <ConvertorForm isLoading={ isLoading} />
+      </div>
     </div>
   );
 };
