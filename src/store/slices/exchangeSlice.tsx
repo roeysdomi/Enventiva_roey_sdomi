@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { convertCurrency } from "../actions/exchangeAction";
 
-interface CurrencyExchangeState {
+export interface CurrencyExchangeState {
   loading: boolean;
   error: string | null;
   result: number | null;

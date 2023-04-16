@@ -1,8 +1,6 @@
 import React from "react";
 import { useToggle } from "../../hooks/useToggle";
 import classNames from "classnames";
-import { menuExample } from "../../constants/menuExamples";
-import MenuIcon from "./MenuIcon";
 import { SideMenu } from "./SideMenu";
 export function NavigationBar({}) {
   const { isOn: isOpen, changeToggle } = useToggle();
