@@ -6,9 +6,9 @@ interface MenuIconLineProps {
 }
 
 const MenuIconLine = ({ isOpen, extraClasses }: MenuIconLineProps) => {
-  const baseClasses = "w-5 h-[1px]  bg-white transition duration-300 ease-in-out transform";
+  const baseClasses = "w-5 h-[1px]   bg-red-700 transition duration-300 ease-in-out transform";
   return <div className={`${baseClasses} ${isOpen ? extraClasses : ""}`} />;
-};
+};  
 
 const MenuIcon = ({ isOpen, handleClick }: { isOpen: boolean; handleClick: () => void }) => {
   return (

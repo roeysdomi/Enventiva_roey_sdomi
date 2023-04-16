@@ -1,3 +1,4 @@
+import React from 'react';
 
 export const Title = ({ size, text, color ,visibility}: { size?: string; text: string; color: string,visibility?:string }) => {
     return (

@@ -1,11 +1,9 @@
 import { NavigationBar } from "./components/navigationBar/NavigationBar";
-import { useState } from "react";
+import React from "react";
 import "./App.css";
 import { useInnerHeight } from "./hooks/useInnerHeight";
-import classNames from "classnames";
-import { SideMenu } from "./components/navigationBar/SideMenu";
-import { MainPage } from "./layout/mainPage";
-import MenuIcon from "./components/navigationBar/MenuIcon";
+import Routers from "./components/routes";
+
 function App() {
   const { currentHeight } = useInnerHeight();
 
@@ -15,7 +13,7 @@ function App() {
         <NavigationBar />
         <div className="layout-con h-full w-full flex flex-row">
           <div className="layout-main-section h-w-full ">
-            <MainPage />
+            <Routers />
           </div>
         </div>
       </div>

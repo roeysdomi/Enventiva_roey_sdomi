@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { exchangeRateApi } from "../../services/rapidApi";
+import { exchangeRateApi } from "../../services/api/rapidApi";
 
 interface CurrencyExchange {
   fromCurrency: string;

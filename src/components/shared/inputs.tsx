@@ -11,6 +11,7 @@ interface InputProps {
 export const InputText = (inputProps: InputProps) => {
   return (
     <input
+      data-testid="amount-input"
       className="w-[100%] text-sm text-orange-800  bg-gray-100 rounded-md p-3  focus:border-transparent appearance-none  outline-none"
       type="text"
       onChange={inputProps.onChange}
@@ -18,7 +19,7 @@ export const InputText = (inputProps: InputProps) => {
       required
       pattern="^(?!0(\.0{1,2})?$)\d+(\.\d{1,2})?$"
       maxLength={11}
-      />
+    />
   );
 };
 
@@ -37,6 +38,7 @@ export const OptionsInput = ({ options, selectedOption, handleOptionChange }: Op
       <div className="options-con flex flex-row justify-center items-center gap-2 ">
         <CurrencyFlag className="w-[10%]  " currency={selectedOption} size="lg" />
         <select
+          data-testid="options-input"
           className=" w-[80%] text-sm text-orange-800  bg-orange-300 rounded-md p-3 border-transparent focus:border-transparent appearance-none  outline-none"
           value={selectedOption}
           onChange={(e) => handleOptionChange(e)}

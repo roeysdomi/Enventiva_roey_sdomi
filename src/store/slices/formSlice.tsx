@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface ConverterState {
+export interface ConverterState {
   amount: number;
   fromCurrency: string;
   toCurrency: string;
@@ -24,6 +24,7 @@ export const converterFormSlice = createSlice({
       if (!action.payload) return;
       state.amount = action.payload;
       state.error = null;
+      state.convertedAmount = 0;
     },
     setFromCurrency: (state, action: PayloadAction<string>) => {
       state.fromCurrency = action.payload;
