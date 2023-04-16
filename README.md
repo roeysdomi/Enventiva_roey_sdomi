@@ -12,7 +12,7 @@ CoinSwipe is a fast and simple React TypeScript project that converts exchange r
 ## Deployed version
 I have uploaded it online for your convenience, so  you can access it more easily :
 
-[shorturl.at/bkQT5](shorturl.at/bkQT5).
+[https://shorturl.at/bkQT5](shorturl.at/bkQT5).
 
 
 ## Installation
